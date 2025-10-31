@@ -44,29 +44,29 @@ const Navbar = () => {
             </div>
             <ul className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-44 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="/wedding/traditional">Traditional</Link>
+                <Link href="/weddings/hindu">Traditional</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="/wedding/christian">Christian</Link>
+                <Link href="/weddings/christian">Christian</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="/wedding/muslim">Muslim</Link>
+                <Link href="/weddings/muslim">Muslim</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="/wedding/prewedding">Pre-Wedding</Link>
+                <Link href="/weddings/prewedding">Pre-Wedding</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="/wedding/engagement">Engagement</Link>
+                <Link href="/weddings/engagement">Engagement</Link>
               </li>
               <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="/wedding/outdoor">Outdoor</Link>
+                <Link href="/weddings/outdoor">Outdoor</Link>
               </li>
             </ul>
           </li>
 
           {/* Kids Direct Link */}
           <li className="hover:text-black">
-            <Link href="/kidspage">Kids</Link>
+            <Link href="/kids">Kids</Link>
           </li>
 
           <li className="hover:text-black">
@@ -89,23 +89,29 @@ const Navbar = () => {
         {/* Right Menu - Desktop */}
         <ul className="hidden md:flex space-x-4 items-center text-gray-700 font-medium">
           <li className="hover:text-black">
-            <Link href="/aboutus">About</Link>
+            <Link href="/about">About</Link>
           </li>
           <li className="hover:text-black">
-            <Link href="/blogs">Blogs</Link>
+            <Link href="/blog">Blogs</Link>
           </li>
           <li className="hover:text-black">
             <Link href="/contact">Contact</Link>
           </li>
+          {/* Get a Quote → Redirect to contact */}
           <li>
-            <button className="px-4 py-2 border border-gray-800 rounded-lg hover:bg-gray-100 transition">
-              Get a Quote
-            </button>
+            <Link href="/contact">
+              <button className="px-4 py-2 border border-gray-800 rounded-lg hover:bg-gray-100 transition">
+                Get a Quote
+              </button>
+            </Link>
           </li>
+          {/* Book Now → Call number */}
           <li>
-            <button className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
-              Book Now
-            </button>
+            <a href="tel:6374926377">
+              <button className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
+                Book Now
+              </button>
+            </a>
           </li>
         </ul>
 
@@ -128,32 +134,50 @@ const Navbar = () => {
                 </summary>
                 <ul className="pl-4 mt-2 space-y-2">
                   <li>
-                    <Link href="/wedding/traditional" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/wedding/traditional"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Traditional
                     </Link>
                   </li>
                   <li>
-                    <Link href="/wedding/christian" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/wedding/christian"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Christian
                     </Link>
                   </li>
                   <li>
-                    <Link href="/wedding/muslim" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/wedding/muslim"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Muslim
                     </Link>
                   </li>
                   <li>
-                    <Link href="/wedding/prewedding" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/wedding/prewedding"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Pre-Wedding
                     </Link>
                   </li>
                   <li>
-                    <Link href="/wedding/engagement" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/wedding/engagement"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Engagement
                     </Link>
                   </li>
                   <li>
-                    <Link href="/wedding/outdoor" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                      href="/wedding/outdoor"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       Outdoor
                     </Link>
                   </li>
@@ -187,15 +211,23 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+
+            {/* Mobile - Get a Quote → Contact */}
             <li>
-              <button className="w-full py-2 border border-gray-800 rounded-lg hover:bg-gray-100 transition">
-                Get a Quote
-              </button>
+              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <button className="w-full py-2 border border-gray-800 rounded-lg hover:bg-gray-100 transition">
+                  Get a Quote
+                </button>
+              </Link>
             </li>
+
+            {/* Mobile - Book Now → Call */}
             <li>
-              <button className="w-full py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
-                Book Now
-              </button>
+              <a href="tel:6374926377" onClick={() => setIsMobileMenuOpen(false)}>
+                <button className="w-full py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition">
+                  Book Now
+                </button>
+              </a>
             </li>
           </ul>
         </div>
